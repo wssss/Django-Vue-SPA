@@ -7,7 +7,7 @@
 ## 快速安装
 --- 
 
-python 3.6  pip 9.0.1 , npm 5.4.2  Vue-cli 2.x
+环境 python 3.6  pip 9.0.1 , npm 5.4.2  Vue-cli 2.x
 
 下载项目
 
@@ -20,7 +20,6 @@ git clone https://github.com/wssss/Django-Vue-SPA
 ```
 pip install -r requirements 
 python manage.py runserver
-
 ```
 
 前端目录下
