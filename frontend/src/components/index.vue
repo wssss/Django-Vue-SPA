@@ -30,7 +30,7 @@
             </div>
             <div class="widget tag">
                 <h3 class="title">
-                    Tags
+                    Category
                 </h3>
                 <ul class="entry">
                     <li><a href="#">Javascript</a><small>2</small></li>
@@ -39,7 +39,12 @@
                 </ul>
             </div>
             <div class="widget twitter">
-                <h3 class="title">Tweets</h3>
+                <h3 class="title">Tags</h3>
+                <ul class="entry">
+                    <li><a href="#">Javascript</a><small>2</small></li>
+                    <li><a href="#">Python</a><small>6</small></li>
+                    <li><a href="#">Life</a><small>4</small></li>
+                </ul>
             </div>
         </aside>
     </section>  
