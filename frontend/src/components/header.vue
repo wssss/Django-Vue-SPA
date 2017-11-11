@@ -24,22 +24,24 @@ export default{
 .header {
     text-shadow: 0 0 1px #fff;
     margin: 50px auto;
-	color: #999;
 }
 
 .header h1 a{
-	font-size: 35px;
+	font-size: 2.5em;
+}
+.header a {
 	color: #999;
+}
+
+.header a:hover{
+	color: #258fb8;
+}
+.main-nav{
+	line-height: 2.5em;
 }
 .header .main-nav li{
 	float: left;	
     margin-left: 30px;
-}
-.alignleft {
-    float: left;
-}
-.alignright {
-    float: right;
 }
 </style>
 
