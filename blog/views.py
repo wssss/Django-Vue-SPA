@@ -17,3 +17,15 @@ class postListView(ListAPIView):
     
     def get_queryset(self):
         return models.Post.objects.all() 
+
+class tagListView(ListAPIView):
+    serializer_class = serializers.TagSerializer
+
+    def get_queryset(self):
+        return models.Tag.objects.all()
+
+class CategoryView(ListAPIView):
+    serializer_class = serializers.CategorySerializer
+
+    def get_queryset(self):
+        return models.Category.objects.all()
