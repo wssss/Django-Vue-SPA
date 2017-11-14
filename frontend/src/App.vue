@@ -8,6 +8,7 @@
 <script>
 import header from './components/header';
 
+
 export default {
 	components: {
 		headerView: header

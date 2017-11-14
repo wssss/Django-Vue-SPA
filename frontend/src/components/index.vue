@@ -2,25 +2,20 @@
     <section class="inner">
         <div class="main-col alignleft">
             <div class="wrap">
-                <article class="post">
+                <article class="post" v-for="post in posts">
                     <div class="post-content">
                         <header>
                             <div class="time">
-                                Dec 29, 2015
+                                {{post.created_time}}
                             </div>
                             <h1 class="title"> 
-                                <a href="#">intro</a>
+                                <a href="#">{{post.title}}</a>
                             </h1>
                         </header>
                         <div class="entry markdown">
-                            <p>文章文章。post-content</p>
+                            <div v-html="post.body"></div>
                         </div>
                     </div>
-                </article>
-                <article class="post">
-                    <div class="post-content">
-                        文章文章。post-content
-                    </div> 
                 </article>
             </div>
         </div>
@@ -33,25 +28,68 @@
                     Category
                 </h3>
                 <ul class="entry">
-                    <li><a href="#">Javascript</a><small>2</small></li>
-                    <li><a href="#">Python</a><small>6</small></li>
-                    <li><a href="#">Life</a><small>4</small></li>
+                    <li v-for="category in categories">
+                        <a href="#">{{category.name}}</a><small>2</small>
+                    </li>
+                    
                 </ul>
             </div>
             <div class="widget twitter">
                 <h3 class="title">Tags</h3>
                 <ul class="entry">
-                    <li><a href="#">Javascript</a><small>2</small></li>
-                    <li><a href="#">Python</a><small>6</small></li>
-                    <li><a href="#">Life</a><small>4</small></li>
+                    <li v-for="tag in tags"><a href="#">{{tag.name}}</a><small>2</small></li>
                 </ul>
             </div>
         </aside>
     </section>  
 </template>
 <script>
+import Marked from 'marked';
+
 export default{
-    
+
+    created(){
+        this.getPost();
+        this.getCategory();
+        this.getTags();
+    },
+    data(){
+        return {
+            posts:[],
+            categories:[],
+            tags:[]
+        }
+    },
+
+    methods:{
+        //获取所有post 数据
+        getPost(){
+            this.$http.get('api/post')
+            .then(res => {
+                this.posts = res.data;
+                for(let i=0; i < this.posts.length; i++){
+                    this.posts[i].body = Marked(this.posts[i].body)
+                }
+                console.log(res.data)
+            })
+        },
+
+        getCategory(){
+            this.$http.get('api/post/categories')
+            .then(res => {
+                this.categories = res.data;
+                console.log(res.data)
+            })
+        },
+        
+        getTags(){
+            this.$http.get('api/post/tags')
+            .then(res => {
+                this.tags = res.data;
+                console.log(res.data)
+            })
+        }
+    }
 }
 </script>
 <style>
@@ -66,7 +104,7 @@ export default{
     padding: 20px 20px 15px 77px;
     margin-bottom: 50px;
     position: relative;
-    height: 200px;
+    min-height: 200px;
 }
 .siderbar{
     width: 270px;
@@ -103,14 +141,14 @@ export default{
     font-size: 0.9em;
     padding: 15px 20px;
 }
-.tag small{
+.widget small{
     margin-left: 15px;
     color: #999;
 }
-.tag small:before {
+.widget small:before {
   content: '(';
 }
-.tag small:after {
+.widget small:after {
   content: ')';
 }
 .post-content .title a {
