@@ -4,11 +4,17 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import highlightjs from 'highlight.js'; 
 
 
+Vue.prototype.$http = axios;
 
-Vue.prototype.$http = axios
-
+Vue.directive('highlight',function (el) {
+    let blocks = el.querySelectorAll('pre code');
+    blocks.forEach((block)=>{
+      highlightjs.highlightBlock(block)
+    })
+})
 
 Vue.config.productionTip = false;
 axios.defaults.baseURL = 'http://127.0.0.1:8000/';

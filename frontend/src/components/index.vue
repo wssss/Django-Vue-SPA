@@ -13,7 +13,7 @@
                             </h1>
                         </header>
                         <div class="entry markdown">
-                            <div v-html="post.body"></div>
+                            <div v-highlight v-html="post.body"></div>
                         </div>
                     </div>
                 </article>
@@ -34,33 +34,30 @@
                     
                 </ul>
             </div>
-            <div class="widget twitter">
-                <h3 class="title">Tags</h3>
-                <ul class="entry">
-                    <li v-for="tag in tags"><a href="#">{{tag.name}}</a><small>2</small></li>
-                </ul>
-            </div>
+            <tags></tags>    
         </aside>
     </section>  
 </template>
 <script>
 import Marked from 'marked';
+import tags from '@/components/tags';
+import 'highlight.js/styles/monokai-sublime.css'
 
 export default{
 
     created(){
         this.getPost();
-        this.getCategory();
-        this.getTags();
+        this.getCategory()
     },
     data(){
         return {
             posts:[],
-            categories:[],
-            tags:[]
+            categories:[]
         }
     },
-
+    components:{
+        tags
+    },
     methods:{
         //获取所有post 数据
         getPost(){
@@ -80,19 +77,12 @@ export default{
                 this.categories = res.data;
                 console.log(res.data)
             })
-        },
-        
-        getTags(){
-            this.$http.get('api/post/tags')
-            .then(res => {
-                this.tags = res.data;
-                console.log(res.data)
-            })
         }
     }
 }
 </script>
 <style>
+
 .main-col{
     width: 900px; 
 }
