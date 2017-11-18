@@ -128,7 +128,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 REST_FRAMEWORK = {
     # 使用Django的标准`django.contrib.auth`权限管理类,
     # 或者为尚未认证的用户，赋予只读权限.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    # ]
 }
