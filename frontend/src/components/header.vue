@@ -7,7 +7,7 @@
 		</div>
 		<nav class="alignright main-nav">
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><router-link to="/">Home</router-link></li>
 				<li><a href="#">Archives</a></li>
 				<li><a href="#">Pages</a></li>
 			</ul>

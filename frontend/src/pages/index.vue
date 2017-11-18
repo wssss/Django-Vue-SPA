@@ -9,7 +9,7 @@
                                 {{post.created_time}}
                             </div>
                             <h1 class="title"> 
-                                <a href="#">{{post.title}}</a>
+                                <router-link :to="{ name: 'post', params:  { 'id': post.id}}">{{post.title}}</router-link>
                             </h1>
                         </header>
                         <div class="entry markdown">
@@ -23,58 +23,44 @@
             <div class="search">
                 <input type="text" name="search" placeholder="search">
             </div>
-            <div class="widget tag">
-                <h3 class="title">
-                    Category
-                </h3>
-                <ul class="entry">
-                    <li v-for="category in categories">
-                        <a href="#">{{category.name}}</a><small>2</small>
-                    </li>
-                    
-                </ul>
-            </div>
-            <tags></tags>    
+            <keep-alive>
+                <categories></categories>
+            </keep-alive>
+            <keep-alive>
+                <tags></tags> 
+            </keep-alive>   
         </aside>
     </section>  
 </template>
 <script>
 import Marked from 'marked';
 import tags from '@/components/tags';
+import categories from '@/components/categories'
 import 'highlight.js/styles/monokai-sublime.css'
 
 export default{
 
     created(){
-        this.getPost();
-        this.getCategory()
+        this.getPosts();
     },
     data(){
         return {
-            posts:[],
-            categories:[]
+            posts:[]
         }
     },
     components:{
-        tags
+        tags,
+        categories,
     },
     methods:{
         //获取所有post 数据
-        getPost(){
+        getPosts(){
             this.$http.get('api/post')
             .then(res => {
                 this.posts = res.data;
                 for(let i=0; i < this.posts.length; i++){
                     this.posts[i].body = Marked(this.posts[i].body)
                 }
-                console.log(res.data)
-            })
-        },
-
-        getCategory(){
-            this.$http.get('api/post/categories')
-            .then(res => {
-                this.categories = res.data;
                 console.log(res.data)
             })
         }

@@ -60,4 +60,7 @@ body {
 .alignright {
     float: right;
 }
+article .entry p, article .entry blockquote, article .entry ul, article .entry ol, article .entry dl, article .entry table, article .entry iframe, article .entry h3, article .entry h4, article .entry h5, article .entry h6, article .entry pre {
+    margin-top: 15px;
+}
 </style>
