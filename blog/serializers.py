@@ -6,12 +6,12 @@ class PostSerializer(serializers.ModelSerializer):
         model = models.Post
         fields = '__all__'
 
-class TagSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Tag
-        fields = '__all__'
+class TagSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(read_only=True)
+    post_count = serializers.IntegerField(required=False)
 
-class CategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Category
-        fields = '__all__'
+class CategorySerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    name = serializers.CharField(read_only=True)
+    post_count = serializers.IntegerField(required=False)

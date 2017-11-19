@@ -6,6 +6,7 @@ from django.http import Http404
 from rest_framework.response import Response
 from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView
 from rest_framework.views import APIView
+from django.db.models import Count
 
 
 from . import models
@@ -39,12 +40,12 @@ class postRetrieveView(APIView):
 
 class tagListView(ListAPIView):
     serializer_class = serializers.TagSerializer
-
+    
     def get_queryset(self):
-        return models.Tag.objects.all()
+        return models.Tag.objects.annotate(post_count=Count('post'))
 
-class CategoryView(ListAPIView):
+class CategoryListView(ListAPIView):
     serializer_class = serializers.CategorySerializer
 
     def get_queryset(self):
-        return models.Category.objects.all()
+        return models.Category.objects.annotate(post_count=Count('post'))
