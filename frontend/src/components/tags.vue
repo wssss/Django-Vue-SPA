@@ -2,7 +2,7 @@
     <div class="widget twitter">
         <h3 class="title">Tags</h3>
         <ul class="entry">
-            <li v-for="tag in tags"><a href="#">{{tag.name}}</a><small>2</small></li>
+            <li v-for="tag in tags"><a href="#">{{tag.name}}</a><small>{{tag.post_count}}</small></li>
         </ul>
     </div>
 </template>

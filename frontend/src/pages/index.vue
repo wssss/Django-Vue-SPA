@@ -22,13 +22,9 @@
         <aside class="siderbar alignright">
             <div class="search">
                 <input type="text" name="search" placeholder="search">
-            </div>
-            <keep-alive>
-                <categories></categories>
-            </keep-alive>
-            <keep-alive>
-                <tags></tags> 
-            </keep-alive>   
+            </div>   
+            <categories></categories>
+            <tags></tags> 
         </aside>
     </section>  
 </template>

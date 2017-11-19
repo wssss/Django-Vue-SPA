@@ -5,7 +5,7 @@
         </h3>
         <ul class="entry">
             <li v-for="category in categories">
-                <a href="#">{{category.name}}</a><small>2</small>
+                <a href="#">{{category.name}}</a><small>{{category.post_count}}</small>
             </li>
             
         </ul>
