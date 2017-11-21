@@ -6,7 +6,7 @@
                     <div class="post-content">
                         <header>
                             <div class="time">
-                                {{post.created_time}}
+                                日期：{{post.created_time | limitTo(10)}}
                             </div>
                             <h1 class="title"> 
                                 <router-link :to="{ name: 'post', params:  { 'id': post.id}}">{{post.title}}</router-link>
@@ -59,6 +59,11 @@ export default{
                 }
                 console.log(res.data)
             })
+        }
+    },
+    filters:{
+        limitTo:function(str, len){
+            return str.substr(0, len)
         }
     }
 }

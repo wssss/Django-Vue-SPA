@@ -32,7 +32,6 @@
 import Marked from 'marked';
 import tags from '@/components/tags';
 import categories from '@/components/categories'
-import 'highlight.js/styles/monokai-sublime.css'
 
 export default{
 
