@@ -5,9 +5,10 @@
         </h3>
         <ul class="entry">
             <li v-for="category in categories">
-                <a href="#">{{category.name}}</a><small>{{category.post_count}}</small>
+                <router-link :to="{ name: 'posts', query: { 'category': category.id }}">
+                    {{category.name}}
+                </router-link><small>{{category.post_count}}</small>
             </li>
-            
         </ul>
     </div>
 </template>
@@ -30,5 +31,4 @@ export default{
         }
     }
 }
-</script>
 </script>

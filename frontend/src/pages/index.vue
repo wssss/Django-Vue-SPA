@@ -8,7 +8,7 @@
                             <div class="time">
                                 日期：{{post.created_time | limitTo(10)}}
                             </div>
-                            <h1 class="title"> 
+                            <h1 class="title">
                                 <router-link :to="{ name: 'post', params:  { 'id': post.id}}">{{post.title}}</router-link>
                             </h1>
                         </header>
@@ -22,11 +22,11 @@
         <aside class="siderbar alignright">
             <div class="search">
                 <input type="text" name="search" placeholder="search">
-            </div>   
+            </div>
             <categories></categories>
-            <tags></tags> 
+            <tags></tags>
         </aside>
-    </section>  
+    </section>
 </template>
 <script>
 import Marked from 'marked';
@@ -70,73 +70,6 @@ export default{
 </script>
 <style>
 
-.main-col{
-    width: 900px; 
-}
-.post{
-    box-shadow: 1px 2px 3px #ddd;
-    background: #fff;
-}
-.post-content{
-    padding: 20px 20px 15px 77px;
-    margin-bottom: 50px;
-    position: relative;
-    min-height: 200px;
-}
-.siderbar{
-    width: 270px;
-    line-height: 1.8em;
-}
-.search{
-    margin-bottom: 30px;
-}
-.siderbar .search input{
-    background: #fff;
-    font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-style: italic;
-    font-size: 1em;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    color: #999;
-}
-.widget {
-    background: #fff;
-    box-shadow: 1px 2px 3px #ddd;
-    margin-bottom: 30px;
-}
-.widget .title{
-    padding: 15px 20px;
-    font-size: 1em;
-    border-bottom: 1px solid #ddd;
-    font-weight: normal;
-}
-.widget .entry{
-    font-size: 0.9em;
-    padding: 15px 20px;
-}
-.widget small{
-    margin-left: 15px;
-    color: #999;
-}
-.widget small:before {
-  content: '(';
-}
-.widget small:after {
-  content: ')';
-}
-.post-content .title a {
-    font-size: 1.8em;
-    color: #444;
-}
-.post-content .title a:hover{
-    color: #258fb8;
-}
-.post-content .time{
-    color: #258fb8;
-}
+
 
 </style>

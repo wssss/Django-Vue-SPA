@@ -8,8 +8,8 @@
                             <div class="time">
                                 {{post.created_time}}
                             </div>
-                            <h1 class="title"> 
-                                <a href="#">{{post.title}}</a>
+                            <h1 class="title">
+                                <span>{{post.title}}</span>
                             </h1>
                         </header>
                         <div class="entry markdown">
@@ -24,9 +24,9 @@
                 <input type="text" name="search" placeholder="search">
             </div>
             <categories></categories>
-            <tags></tags> 
+            <tags></tags>
         </aside>
-    </section>  
+    </section>
 </template>
 <script>
 import Marked from 'marked';
