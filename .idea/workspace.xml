@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a3968c0-2656-449f-98dd-826c9d0d4650" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/posts.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/categories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/categories.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/tags.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/tags.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/post.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/post.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/posts.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/posts.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45250896">
+    <splitter split-orientation="horizontal" split-proportion="0.42921147">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="post.vue" pinned="false" current-in-tab="false">
@@ -31,11 +26,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/src/pages/index.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+                <state relative-caret-position="275">
+                  <caret line="62" column="6" lean-forward="true" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -43,13 +38,13 @@
           <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/frontend/src/App.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="350">
-                  <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+                <state relative-caret-position="277">
+                  <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/frontend/src/router/index.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="425">
@@ -71,20 +66,20 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="posts.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="posts.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/frontend/src/pages/posts.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="925">
-                  <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
+                <state relative-caret-position="425">
+                  <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tags.vue" pinned="false" current-in-tab="true">
+          <file leaf-file-name="tags.vue" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/frontend/src/components/tags.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="125">
-                  <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+                <state relative-caret-position="375">
+                  <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -114,9 +109,9 @@
       <find>generics</find>
       <find>DjangoFilterBackend</find>
       <find>.a</find>
-      <find>title a</find>
-      <find>post</find>
       <find>posts</find>
+      <find>post</find>
+      <find>title a</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,13 +130,13 @@
         <option value="$PROJECT_DIR$/blog/serializers.py" />
         <option value="$PROJECT_DIR$/blog/views.py" />
         <option value="$PROJECT_DIR$/frontend/src/pages/list.vue" />
-        <option value="$PROJECT_DIR$/frontend/src/pages/index.vue" />
         <option value="$PROJECT_DIR$/frontend/src/pages/post.vue" />
-        <option value="$PROJECT_DIR$/frontend/src/App.vue" />
         <option value="$PROJECT_DIR$/frontend/src/router/index.js" />
-        <option value="$PROJECT_DIR$/frontend/src/pages/posts.vue" />
         <option value="$PROJECT_DIR$/frontend/src/components/categories.vue" />
         <option value="$PROJECT_DIR$/frontend/src/components/tags.vue" />
+        <option value="$PROJECT_DIR$/frontend/src/App.vue" />
+        <option value="$PROJECT_DIR$/frontend/src/pages/index.vue" />
+        <option value="$PROJECT_DIR$/frontend/src/pages/posts.vue" />
       </list>
     </option>
   </component>
@@ -276,7 +271,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16964285" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -507,41 +501,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/header.vue">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/pages/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/pages/post.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="53" column="26" lean-forward="true" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/pages/posts.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -554,8 +520,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/tags.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+        <state relative-caret-position="375">
+          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/pages/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="62" column="6" lean-forward="true" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/pages/posts.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
         </state>
       </provider>
     </entry>

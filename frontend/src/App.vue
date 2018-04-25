@@ -14,6 +14,7 @@ export default {
 	components: {
 		headerView: header
 	}
+
 }
 </script>
 

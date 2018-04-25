@@ -5,9 +5,15 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import highlightjs from 'highlight.js'; 
+import * as custom from './libs/filters'
 
 
 Vue.prototype.$http = axios;
+
+//filters
+Object.keys(custom).forEach(key => {
+  Vue.filter(key, custom[key])
+})
 
 Vue.directive('highlight',function (el) {
     let blocks = el.querySelectorAll('pre code');

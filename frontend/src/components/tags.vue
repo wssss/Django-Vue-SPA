@@ -2,7 +2,7 @@
     <div class="widget twitter">
         <h3 class="title">Tags</h3>
         <ul class="entry">
-            <li v-for="tag in tags">
+            <li v-for="tag in tags" :key="tag.id">
                 <router-link :to="{ name: 'posts', query: { 'tag': tag.id }}">
                     {{tag.name}}
                 </router-link>

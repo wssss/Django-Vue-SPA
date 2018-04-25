@@ -4,7 +4,7 @@
             Category
         </h3>
         <ul class="entry">
-            <li v-for="category in categories">
+            <li v-for="category in categories" :key="category.id">
                 <router-link :to="{ name: 'posts', query: { 'category': category.id }}">
                     {{category.name}}
                 </router-link><small>{{category.post_count}}</small>

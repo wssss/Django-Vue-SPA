@@ -5,12 +5,12 @@
                 <article class="post">
                     <div class="post-content">
                         <header>
-                            <div class="time">
-                                {{post.created_time}}
-                            </div>
-                            <h1 class="title">
+                            <h1 class="title post-title">
                                 <span>{{post.title}}</span>
                             </h1>
+                            <div class="time">
+                                日期：{{post.created_time | limitTo(10)}}
+                            </div>
                         </header>
                         <div class="entry markdown">
                             <div v-highlight v-html="post.body"></div>
@@ -60,6 +60,9 @@ export default{
     }
 }
 </script>
-<style>
-
+<style scoped>
+.post-title{
+    text-align: center;
+    margin-bottom: 20px;
+}
 </style>

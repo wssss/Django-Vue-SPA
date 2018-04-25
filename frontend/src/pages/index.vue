@@ -2,7 +2,7 @@
     <section class="inner">
         <div class="main-col alignleft">
             <div class="wrap">
-                <article class="post" v-for="post in posts">
+                <article class="post" v-for="post in posts" :key="post.id">
                     <div class="post-content">
                         <header>
                             <div class="time">
@@ -14,6 +14,9 @@
                         </header>
                         <div class="entry markdown">
                             <div v-highlight v-html="post.body"></div>
+                            <div class="read-more">
+                                <router-link :to="{ name: 'post', params:  { 'id': post.id}}">阅读全文</router-link>
+                            </div>
                         </div>
                     </div>
                 </article>
@@ -33,6 +36,7 @@ import Marked from 'marked';
 import tags from '@/components/tags';
 import categories from '@/components/categories'
 import 'highlight.js/styles/monokai-sublime.css'
+
 
 export default{
 
@@ -55,21 +59,34 @@ export default{
             .then(res => {
                 this.posts = res.data;
                 for(let i=0; i < this.posts.length; i++){
-                    this.posts[i].body = Marked(this.posts[i].body)
+                    this.posts[i].body = Marked(this.posts[i].body.substr(0, 300) + "...")
                 }
                 console.log(res.data)
             })
         }
-    },
-    filters:{
-        limitTo:function(str, len){
-            return str.substr(0, len)
-        }
     }
 }
 </script>
-<style>
+<style scoped> 
 
-
+.read-more{
+    border: 1px solid #de686d;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    padding: 0 20px;
+    margin: 40px auto 10px;
+    font-size: 16px;
+    color: #de686d;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #de686d;
+    line-height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+.read-more a{
+    color: #de686d;
+}
 
 </style>

@@ -2,11 +2,11 @@
     <section class="inner">
          <div class="main-col alignleft">
              <div class="wrap">
-                 <article class="post" v-for="post in posts">
+                 <article class="post" v-for="post in posts" :key="post.id">
                      <div class="list-content">
                          <header>
                              <div class="item">
-                                 {{ post.created_time }}
+                                 日期：{{post.created_time | limitTo(10)}}
                              </div>
                              <h1 class="title">
                                   <router-link :to="{ name: 'post', params:  { 'id': post.id}}">{{post.title}}</router-link>
@@ -33,9 +33,18 @@ import Marked from 'marked';
 import tags from '@/components/tags';
 import categories from '@/components/categories';
 
+
 export default {
     created(){
-        this.getPosts(this.$route.query.category|| '', this.$route.query.tag||'')
+        var paramsUrl = "";
+        console.log(this.$route.query)
+        console.log(this.$route.query.tag)
+        if(this.$route.query.tag){
+            paramsUrl = 'tags=' + this.$route.query.tag
+        }else{
+            paramsUrl = "category=" + this.$route.query.category
+        }
+        this.getPosts(paramsUrl)
     },
     data(){
         return {
@@ -47,14 +56,14 @@ export default {
         categories,
     },
     methods:{
-        getPosts(category, tag){
-              this.$http.get('api/post/?tag=' + tag + '&category=' + category)
-              .then(res => {
-                  this.posts = res.data;
-                  //this.post.body = Marked(this.post.body)
-                  console.log(res.data)
-              })
-          }
+        getPosts(queryUrl){
+            this.$http.get('api/post/?' + queryUrl)
+            .then(res => {
+                this.posts = res.data;
+                //this.post.body = Marked(this.post.body)
+                console.log(res.data)
+            })
+        }
     }
 }
 
