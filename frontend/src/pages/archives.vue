@@ -29,14 +29,13 @@
     </section>
 </template>
 <script>
-import Marked from 'marked';
 import tags from '@/components/tags';
 import categories from '@/components/categories';
 
 
 export default {
     created(){
-        this.applyRoute() 
+        this.getPosts()
     },
     data(){
         return {
@@ -48,26 +47,14 @@ export default {
         categories,
     },
     methods:{
-        getPosts(queryUrl){
-            this.$http.get('api/post/?' + queryUrl)
+        getPosts(){
+            this.$http.get('api/post/')
             .then(res => {
                 this.posts = res.data;
                 //this.post.body = Marked(this.post.body)
                 console.log(res.data)
             })
-        },
-        applyRoute(){
-            var paramsUrl = "";
-            if(this.$route.query.tag){
-            paramsUrl = 'tags=' + this.$route.query.tag
-            }else{
-                paramsUrl = "category=" + this.$route.query.category
-            }
-            this.getPosts(paramsUrl)
         }
-    },
-    watch:{
-        '$route':'applyRoute'
     }
 }
 

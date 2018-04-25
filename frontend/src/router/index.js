@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import index from '@/pages/index'
 import post from '@/pages/post'
 import posts from '@/pages/posts'
+import archives from '@/pages/archives'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
 		  path: '/posts',
 		  name: 'posts',
 		  component:posts
+		},
+		{
+			path: '/archives',
+			name: 'archives',
+			component: archives
 		}
 	]
 })
