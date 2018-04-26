@@ -21,6 +21,7 @@
                     </div>
                 </article>
             </div>
+            <pagination :total="50" :size="10" :page="2" :change="pageFn" :isUrl="false"></pagination>
         </div>
         <aside class="siderbar alignright">
             <div class="search">
@@ -35,6 +36,7 @@
 import Marked from 'marked';
 import tags from '@/components/tags';
 import categories from '@/components/categories'
+import pagination from '@/components/pagination'
 import 'highlight.js/styles/monokai-sublime.css'
 
 
@@ -45,12 +47,13 @@ export default{
     },
     data(){
         return {
-            posts:[]
+            posts:[],
         }
     },
     components:{
         tags,
         categories,
+        pagination
     },
     methods:{
         //获取所有post 数据
@@ -63,7 +66,8 @@ export default{
                 }
                 console.log(res.data)
             })
-        }
+        },
+        pageFn(val){ this.page = val }
     }
 }
 </script>
