@@ -21,7 +21,7 @@
                     </div>
                 </article>
             </div>
-            <pagination :total="50" :size="10" :page="2" :change="pageFn" :isUrl="false"></pagination>
+            <pagination :total="page_state.total" :size="page_state.page_size" :page="page_state.page_num" :change="pageChange" :isUrl="false"></pagination>
         </div>
         <aside class="siderbar alignright">
             <div class="search">
@@ -48,6 +48,11 @@ export default{
     data(){
         return {
             posts:[],
+            page_state:{
+                page_size:3,
+                page_num:1,
+                total:10
+            }
         }
     },
     components:{
@@ -58,16 +63,21 @@ export default{
     methods:{
         //获取所有post 数据
         getPosts(){
-            this.$http.get('api/post')
+            this.$http.get('api/post?page_size=' + this.page_state.page_size + '&page_num=' + this.page_state.page_num)
             .then(res => {
-                this.posts = res.data;
+                this.page_state.total = res.data.count;
+
+                this.posts = res.data.results;
                 for(let i=0; i < this.posts.length; i++){
                     this.posts[i].body = Marked(this.posts[i].body.substr(0, 300) + "...")
                 }
                 console.log(res.data)
             })
         },
-        pageFn(val){ this.page = val }
+        pageChange(val){ 
+            this.page_state.page_num = val;
+            this.getPosts()
+        }
     }
 }
 </script>

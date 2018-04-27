@@ -6,7 +6,10 @@ from django.http import Http404
 from rest_framework.response import Response
 from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView
 from rest_framework.views import APIView
+from rest_framework.pagination import PageNumberPagination
+
 from django.db.models import Count
+
 import django_filters.rest_framework
 
 
@@ -18,12 +21,19 @@ import json
 #     class Meta:
 #         model = models.Post
 #         fields = ('post','tag')
+class defaultPagination(PageNumberPagination):
+    page_size = 10
+    page_query_param = 'page_num'
+    page_size_query_param = 'page_size'
+    max_page_size = 20
 
 class postListView(ListAPIView):
     serializer_class = serializers.PostSerializer
     queryset = models.Post.objects.all()
+    pagination_class = defaultPagination
     filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
     filter_fields = ('category', 'tags')
+    
     
     # def get_queryset(self):
     #     return queryset
@@ -48,12 +58,14 @@ class postRetrieveView(APIView):
 
 class tagListView(ListAPIView):
     serializer_class = serializers.TagSerializer
+    pagination_class = defaultPagination
 
     def get_queryset(self):
         return models.Tag.objects.annotate(post_count=Count('post'))
 
 class CategoryListView(ListAPIView):
     serializer_class = serializers.CategorySerializer
+    pagination_class = defaultPagination
 
     def get_queryset(self):
         return models.Category.objects.annotate(post_count=Count('post'))

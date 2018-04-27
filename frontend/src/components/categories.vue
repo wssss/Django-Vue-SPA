@@ -26,7 +26,7 @@ export default{
         getcategories(){
             this.$http.get('api/post/categories')
             .then(res => {
-                this.categories = res.data;
+                this.categories = res.data.results;
             })
         }
     }

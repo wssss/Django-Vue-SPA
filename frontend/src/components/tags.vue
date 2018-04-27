@@ -27,7 +27,7 @@ export default{
         getTags(){
             this.$http.get('api/post/tags')
             .then(res => {
-                this.tags = res.data;
+                this.tags = res.data.results;
             })
         }
     }

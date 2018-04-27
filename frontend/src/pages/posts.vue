@@ -51,7 +51,7 @@ export default {
         getPosts(queryUrl){
             this.$http.get('api/post/?' + queryUrl)
             .then(res => {
-                this.posts = res.data;
+                this.posts = res.data.results;
                 //this.post.body = Marked(this.post.body)
                 console.log(res.data)
             })

@@ -50,7 +50,7 @@ export default {
         getPosts(){
             this.$http.get('api/post/')
             .then(res => {
-                this.posts = res.data;
+                this.posts = res.data.results;
                 //this.post.body = Marked(this.post.body)
                 console.log(res.data)
             })
