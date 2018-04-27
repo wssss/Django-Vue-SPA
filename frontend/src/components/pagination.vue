@@ -51,7 +51,6 @@ export default {
             this.startDisabled = this.paginationCurrentPage != 1 ? false : true;
             //是否可以点击下一页
             this.endDisabled = this.paginationCurrentPage != this.paginationPage ? false : true;
-            console.log(this)
 
             if(this.paginationPage == 0){
                 this.endDisabled == true

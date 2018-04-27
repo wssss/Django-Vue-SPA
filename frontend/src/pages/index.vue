@@ -24,33 +24,30 @@
             <pagination :total="page_state.total" :size="page_state.page_size" :page="page_state.page_num" :change="pageChange" :isUrl="false"></pagination>
         </div>
         <aside class="siderbar alignright">
-            <div class="search">
-                <input type="text" name="search" placeholder="search">
-            </div>
+            <search></search>  
             <categories></categories>
             <tags></tags>
         </aside>
+        <div class="clearfix"></div>
     </section>
 </template>
 <script>
 import Marked from 'marked';
 import tags from '@/components/tags';
 import categories from '@/components/categories'
+import search from '@/components/search'
 import pagination from '@/components/pagination'
 import 'highlight.js/styles/monokai-sublime.css'
 
 
 export default{
 
-    created(){
-        this.getPosts();
-    },
     data(){
         return {
             posts:[],
             page_state:{
                 page_size:3,
-                page_num:1,
+                page_num:this.$route.query.page_num || 1,
                 total:10
             }
         }
@@ -58,6 +55,7 @@ export default{
     components:{
         tags,
         categories,
+        search,
         pagination
     },
     methods:{
@@ -76,6 +74,7 @@ export default{
         },
         pageChange(val){ 
             this.page_state.page_num = val;
+            this.$router.push({ query: {page_num: val }})
             this.getPosts()
         }
     }

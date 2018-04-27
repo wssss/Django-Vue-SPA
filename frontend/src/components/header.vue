@@ -2,7 +2,7 @@
     <header class="header inner">
 		<div class="alignleft">
 			<h1>
-				<a href="">温柔g__</a>
+				<a href="">我是豆豆g__</a>
 			</h1>
 		</div>
 		<nav class="alignright main-nav">

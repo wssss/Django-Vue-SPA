@@ -11,6 +11,7 @@ from rest_framework.pagination import PageNumberPagination
 from django.db.models import Count
 
 import django_filters.rest_framework
+from rest_framework import filters 
 
 
 from . import models
@@ -31,8 +32,9 @@ class postListView(ListAPIView):
     serializer_class = serializers.PostSerializer
     queryset = models.Post.objects.all()
     pagination_class = defaultPagination
-    filter_backends = (django_filters.rest_framework.DjangoFilterBackend,)
+    filter_backends = (django_filters.rest_framework.DjangoFilterBackend, filters.SearchFilter)
     filter_fields = ('category', 'tags')
+    search_fields = ('body', 'title', 'excerpt')
     
     
     # def get_queryset(self):

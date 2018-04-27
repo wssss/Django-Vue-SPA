@@ -37,7 +37,7 @@ body {
     font-size: 14px;
     text-shadow: 0 0 1px transparent;
 	margin:0;
-	padding:0;
+	padding:0 0 20px 0;
 }
 .inner {
     width: 1200px;
