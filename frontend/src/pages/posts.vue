@@ -20,9 +20,7 @@
              </div>
          </div>
          <aside class="siderbar alignright">
-              <div class="search">
-                  <input type="text" name="search" placeholder="search">
-              </div>
+              <search></search>
               <categories></categories>
               <tags></tags>
         </aside>
@@ -31,6 +29,7 @@
 <script>
 import Marked from 'marked';
 import tags from '@/components/tags';
+import search from '@/components/search'
 import categories from '@/components/categories';
 
 
@@ -46,6 +45,7 @@ export default {
     components:{
         tags,
         categories,
+        search
     },
     methods:{
         getPosts(queryUrl){

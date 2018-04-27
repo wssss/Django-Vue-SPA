@@ -5,10 +5,10 @@
 </template>
 <script>
 export default {
-    
+    props:['search'],
     data(){
         return {
-            searchText:''
+            searchText: this.search || ''
         }
     },
     methods:{

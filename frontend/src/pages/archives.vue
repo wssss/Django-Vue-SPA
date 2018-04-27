@@ -20,7 +20,7 @@
              </div>
          </div>
          <aside class="siderbar alignright">
-              <search></search>
+              <search v-bind:search="search"></search>
               <categories></categories>
               <tags></tags>
         </aside>
@@ -34,10 +34,12 @@ import search from '@/components/search'
 export default {
     created(){
         this.getPosts()
+        this.search = this.$route.query.search ||''
     },
     data(){
         return {
-            posts:[]
+            posts:[],
+            search:''
         }
     },
     components:{
@@ -47,13 +49,23 @@ export default {
     },
     methods:{
         getPosts(){
-            this.$http.get('api/post/')
+            let url = 'api/post/'
+            if (this.$route.query.search){
+                url = url + '?search=' + this.$route.query.search
+            }
+            this.$http.get(url)
             .then(res => {
                 this.posts = res.data.results;
                 //this.post.body = Marked(this.post.body)
                 console.log(res.data)
             })
+        },
+        applySearch(){
+            this.getPosts();
         }
+    },
+    watch:{
+        '$route': 'applySearch'
     }
 }
 
