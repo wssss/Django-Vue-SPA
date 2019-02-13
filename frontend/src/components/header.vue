@@ -9,7 +9,7 @@
 			<ul>
 				<li><router-link to="/">Home</router-link></li>
 				<li><router-link to="archives">archives</router-link></li>
-				<li><a href="#">Pages</a></li>
+				<li><a @click = "showToast">Pages</a></li>
 			</ul>
 		</nav>
 		<div class="clearfix"></div>
@@ -17,7 +17,11 @@
 </template>
 <script>
 export default{
-    
+    methods:{
+		showToast(){
+			this.$toast('我是弹出消息')
+		}
+	}
 }
 </script>
 <style scoped>

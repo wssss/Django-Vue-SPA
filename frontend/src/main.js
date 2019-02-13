@@ -6,9 +6,11 @@ import router from './router'
 import axios from 'axios'
 import highlightjs from 'highlight.js'; 
 import * as custom from './libs/filters'
+import toastRegistry from "./components/toast/index";
 
 
 Vue.prototype.$http = axios;
+Vue.use(toastRegistry)
 
 //filters
 Object.keys(custom).forEach(key => {

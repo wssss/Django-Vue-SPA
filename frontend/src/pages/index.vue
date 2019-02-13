@@ -21,7 +21,12 @@
                     </div>
                 </article>
             </div>
-            <pagination :total="page_state.total" :size="page_state.page_size" :page="page_state.page_num" :change="pageChange" :isUrl="false"></pagination>
+            <pagination 
+            :total="page_state.total" 
+            :size="page_state.page_size" 
+            :page="page_state.page_num" 
+            :change="pageChange" 
+            :isUrl="false"></pagination>
         </div>
         <aside class="siderbar alignright">
             <search></search>  
