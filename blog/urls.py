@@ -7,3 +7,4 @@ urlpatterns = [
     url(r'tags', views.tagListView.as_view(),name="tag"),
     url(r'categories', views.CategoryListView.as_view(), name='category')
 ]
+app_name ='[blog]' 

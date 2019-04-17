@@ -10,6 +10,7 @@
 				<li><router-link to="/">Home</router-link></li>
 				<li><router-link to="archives">archives</router-link></li>
 				<li><a href="#">Pages</a></li>
+				<li><router-link to="tushare">tushare</router-link></li>
 			</ul>
 		</nav>
 		<div class="clearfix"></div>

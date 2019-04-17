@@ -41,7 +41,6 @@ import 'highlight.js/styles/monokai-sublime.css'
 
 
 export default{
-
     data(){
         return {
             posts:[],
